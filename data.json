@@ -1,0 +1,15 @@
+{
+  "mode": "PAPER",
+  "updated_at": null,
+  "equity": 1000,
+  "cash": 1000,
+  "positions": [],
+  "history": [],
+  "portfolio_history": [],
+  "workers": {
+    "hunter": "WAITING",
+    "analyst": "WAITING",
+    "trader": "PAPER",
+    "supervisor": "WAITING"
+  }
+}
