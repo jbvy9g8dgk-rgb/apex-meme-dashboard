@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080d19">
+<title>APEX MEME PRO</title>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+:root {
+  --bg: #080d19;
+  --card: #111a2d;
+  --border: #24314b;
+  --text: #eef4ff;
+  --muted: #91a1bb;
+  --green: #22e6a7;
+  --red: #ff607b;
+  --blue: #5399ff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+header {
+  padding: 24px 18px 18px;
+  background: linear-gradient(135deg, #14294a, #080d19);
+  border-bottom: 1px solid var(--border);
+}
+
+.brand {
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.brand span { color: var(--green); }
+
+.subtitle {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 6px;
+}
+
+.status {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 7px 12px;
+  background: #123b34;
+  border: 1px solid #236c58;
+  border-radius: 20px;
+  color: var(--green);
+  font-size: 11px;
+  font-weight: bold;
+}
+
+main {
+  max-width: 1100px;
+  margin: auto;
+  padding: 16px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 17px;
+  margin-bottom: 14px;
+}
+
+.label {
+  color: var(--muted);
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.value {
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.positive { color: var(--green); }
+.negative { color: var(--red); }
+
+.section-title {
+  font-size: 16px;
+  font-weight: 800;
+  margin: 24px 0 12px;
+}
+
+.worker {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.worker:last-child { border-bottom: none; }
+
+.worker-name {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.worker-description {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.badge {
+  padding: 5px 9px;
+  border-radius: 8px;
+  background: #173e34;
+  color: var(--green);
+  font-size: 10px;
+  font-weight: 800;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+th {
+  color: var(--muted);
+  font-weight: 500;
+  text-align: left;
+  padding: 12px 6px;
+}
+
+td {
+  padding: 13px 6px;
+  border-top: 1px solid var(--border);
+}
+
+.empty {
+  color: var(--muted);
+  font-size: 13px;
+  padding: 20px 0;
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 11px;
+  padding: 30px 15px;
+}
+
+@media (min-width: 700px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="brand">APEX <span>MEME PRO</span></div>
+  <div class="subtitle">V4 • Solana Trading Intelligence</div>
+  <div class="status">● PAPER TRADING</div>
+</header>
+
+<main>
+
+  <div class="grid">
+    <div class="card">
+      <div class="label">Portfolio Value</div>
+      <div class="value" id="equity">$1,000.00</div>
+    </div>
+
+    <div class="card">
+      <div class="label">Total P&L</div>
+      <div class="value" id="pnl">$0.00</div>
+    </div>
+
+    <div class="card">
+      <div class="label">Available Cash</div>
+      <div class="value" id="cash">$1,000.00</div>
+    </div>
+
+    <div class="card">
+      <div class="label">Open Positions</div>
+      <div class="value" id="positions">0</div>
+    </div>
+  </div>
+
+  <div class="section-title">📈 Portfolio Performance</div>
+
+  <div class="card">
+    <canvas id="portfolioChart"></canvas>
+  </div>
+
+  <div class="section-title">🤖 Digital Trading Workers</div>
+
+  <div class="card">
+    <div class="worker">
+      <div>
+        <div class="worker-name">🔎 Hunter</div>
+        <div class="worker-description">Token discovery</div>
+      </div>
+      <span class="badge">CONFIGURED</span>
+    </div>
+
+    <div class="worker">
+      <div>
+        <div class="worker-name">🧠 Analyst</div>
+        <div class="worker-description">Market scoring</div>
+      </div>
+      <span class="badge">CONFIGURED</span>
+    </div>
+
+    <div class="worker">
+      <div>
+        <div class="worker-name">⚡ Trader</div>
+        <div class="worker-description">Simulated execution</div>
+      </div>
+      <span class="badge">PAPER</span>
+    </div>
+
+    <div class="worker">
+      <div>
+        <div class="worker-name">🛡️ Supervisor</div>
+        <div class="worker-description">Risk management</div>
+      </div>
+      <span class="badge">CONFIGURED</span>
+    </div>
+  </div>
+
+  <div class="section-title">💼 Active Positions</div>
+
+  <div class="card">
+    <table>
+      <thead>
+        <tr>
+          <th>Token</th>
+          <th>Entry</th>
+          <th>Quantity</th>
+          <th>Cost</th>
+        </tr>
+      </thead>
+      <tbody id="positionsTable">
+        <tr>
+          <td colspan="4" class="empty">No positions loaded</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section-title">📜 Trading History</div>
+
+  <div class="card">
+    <table>
+      <thead>
+        <tr>
+          <th>Side</th>
+          <th>Token</th>
+          <th>Price</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody id="historyTable">
+        <tr>
+          <td colspan="4" class="empty">No trades loaded</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section-title">🔥 Trading Intelligence</div>
+
+  <div class="card">
+    <div class="worker">
+      <span>New-launch monitoring</span>
+      <span class="badge">READY</span>
+    </div>
+
+    <div class="worker">
+      <span>Established-token monitoring</span>
+      <span class="badge">READY</span>
+    </div>
+
+    <div class="worker">
+      <span>Copy trading</span>
+      <span class="badge">NOT CONNECTED</span>
+    </div>
+
+    <div class="worker">
+      <span>Real-money trading</span>
+      <span class="badge">LOCKED</span>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  APEX MEME PRO V4<br>
+  Research & Paper Trading Only<br>
+  Simulated performance does not predict real returns.
+</footer>
+
+<script>
+const money = n => "$" + Number(n).toLocaleString(
+  "en-US",
+  {minimumFractionDigits: 2, maximumFractionDigits: 2}
+);
+
+const demo = {
+  equity: 1000,
+  cash: 1000,
+  positions: [],
+  history: []
+};
+
+document.getElementById("equity").textContent = money(demo.equity);
+document.getElementById("cash").textContent = money(demo.cash);
+document.getElementById("positions").textContent = demo.positions.length;
+
+const pnl = demo.equity - 1000;
+const pnlElement = document.getElementById("pnl");
+
+pnlElement.textContent = money(pnl);
+pnlElement.className = "value " + (
+  pnl >= 0 ? "positive" : "negative"
+);
+
+new Chart(
+  document.getElementById("portfolioChart"),
+  {
+    type: "line",
+    data: {
+      labels: ["Start"],
+      datasets: [{
+        label: "Portfolio USD",
+        data: [demo.equity],
+        borderColor: "#22e6a7",
+        backgroundColor: "rgba(34,230,167,0.08)",
+        fill: true,
+        tension: 0.35
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {display: false}
+      },
+      scales: {
+        x: {
+          ticks: {color: "#91a1bb"},
+          grid: {color: "#24314b"}
+        },
+        y: {
+          ticks: {color: "#91a1bb"},
+          grid: {color: "#24314b"}
+        }
+      }
+    }
+  }
+);
+</script>
+
+</body>
+</html>
