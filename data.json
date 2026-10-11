@@ -1,15 +1,45 @@
 {
+  "version": "V4",
   "mode": "PAPER",
-  "updated_at": null,
-  "equity": 1000,
-  "cash": 1000,
-  "positions": [],
-  "history": [],
-  "portfolio_history": [],
+  "updated_at": "2026-10-11T22:37:43.289554+00:00",
+  "equity": 999.6502,
+  "cash": 970.0,
+  "positions": [
+    {
+      "symbol": "PUMP",
+      "entry_price": 0.005612570000000001,
+      "quantity": 5318.419191208305,
+      "cost": 30.0
+    }
+  ],
+  "history": [
+    {
+      "time": "2026-10-11T22:17:28.748000+00:00",
+      "side": "BUY",
+      "symbol": "PUMP",
+      "price": 0.005612570000000001,
+      "total": 30.0,
+      "profit": null
+    }
+  ],
+  "portfolio_history": [
+    {
+      "time": "2026-10-11T22:37:43.345175+00:00",
+      "equity": 999.6502
+    }
+  ],
   "workers": {
-    "hunter": "WAITING",
-    "analyst": "WAITING",
+    "hunter": "ACTIVE",
+    "analyst": "ACTIVE",
     "trader": "PAPER",
-    "supervisor": "WAITING"
-  }
+    "supervisor": "ACTIVE"
+  },
+  "statistics": {
+    "candidates": 52,
+    "total_trades": 1,
+    "open_positions": 1,
+    "errors": 0
+  },
+  "real_money_enabled": false,
+  "wallet_connected": false
 }
