@@ -2,46 +2,65 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#080d19">
-<title>APEX MEME PRO</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>APEX MEME PRO | Trading Dashboard</title>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <style>
 :root {
   --bg: #080d19;
-  --card: #111a2d;
-  --border: #24314b;
-  --text: #eef4ff;
-  --muted: #91a1bb;
-  --green: #22e6a7;
-  --red: #ff607b;
-  --blue: #5399ff;
+  --surface: #0e1627;
+  --card: #121e32;
+  --border: #253550;
+  --text: #edf4ff;
+  --muted: #91a3bf;
+  --green: #20e6a4;
+  --red: #ff647e;
+  --blue: #599eff;
+  --yellow: #ffd166;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  padding-bottom: 75px;
 }
 
 header {
-  padding: 24px 18px 18px;
-  background: linear-gradient(135deg, #14294a, #080d19);
+  background: linear-gradient(135deg, #183355, #080d19 75%);
+  padding: 28px 18px 22px;
   border-bottom: 1px solid var(--border);
 }
 
-.brand {
-  font-size: 24px;
-  font-weight: 900;
-  letter-spacing: 1px;
+.header-inner {
+  max-width: 1100px;
+  margin: auto;
 }
 
-.brand span { color: var(--green); }
+.brand {
+  font-size: 25px;
+  font-weight: 900;
+  letter-spacing: 0.8px;
+}
+
+.brand span {
+  color: var(--green);
+}
 
 .subtitle {
   color: var(--muted);
@@ -49,27 +68,53 @@ header {
   margin-top: 6px;
 }
 
-.status {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 7px 12px;
-  background: #123b34;
-  border: 1px solid #236c58;
+.status-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 17px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 11px;
   border-radius: 20px;
+  background: #123d33;
   color: var(--green);
-  font-size: 11px;
-  font-weight: bold;
+  border: 1px solid #286b59;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+}
+
+.badge.blue {
+  background: #162c4b;
+  color: var(--blue);
+  border-color: #315783;
+}
+
+.badge.red {
+  background: #441d2a;
+  color: var(--red);
+  border-color: #793346;
+}
+
+.badge.yellow {
+  background: #40351e;
+  color: var(--yellow);
+  border-color: #736035;
 }
 
 main {
   max-width: 1100px;
   margin: auto;
-  padding: 16px;
+  padding: 17px;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
 }
 
@@ -79,93 +124,235 @@ main {
   border-radius: 16px;
   padding: 17px;
   margin-bottom: 14px;
+  overflow: hidden;
+}
+
+.grid .card {
+  margin-bottom: 0;
+  min-width: 0;
 }
 
 .label {
   color: var(--muted);
-  font-size: 12px;
-  margin-bottom: 8px;
+  font-size: 11px;
+  margin-bottom: 9px;
 }
 
 .value {
-  font-size: 24px;
-  font-weight: 800;
+  font-size: clamp(17px, 5vw, 26px);
+  font-weight: 850;
+  overflow-wrap: anywhere;
 }
 
-.positive { color: var(--green); }
-.negative { color: var(--red); }
+.positive {
+  color: var(--green);
+}
+
+.negative {
+  color: var(--red);
+}
 
 .section-title {
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 800;
-  margin: 24px 0 12px;
+  margin: 25px 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.section-note {
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.hero {
+  margin-bottom: 14px;
+  padding: 21px;
+  border: 1px solid #286b59;
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at top right, #17463b, transparent 55%),
+    linear-gradient(135deg, #152b38, #101a2d);
+}
+
+.hero-label {
+  color: #a7c8c4;
+  font-size: 12px;
+}
+
+.hero-value {
+  font-size: clamp(32px, 9vw, 43px);
+  font-weight: 900;
+  margin-top: 9px;
+  letter-spacing: -1px;
+}
+
+.hero-sub {
+  margin-top: 9px;
+  color: var(--muted);
+  font-size: 12px;
 }
 
 .worker {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 13px 0;
+  gap: 12px;
+  padding: 14px 0;
   border-bottom: 1px solid var(--border);
 }
 
-.worker:last-child { border-bottom: none; }
+.worker:last-child {
+  border-bottom: none;
+}
 
 .worker-name {
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 750;
 }
 
 .worker-description {
   font-size: 11px;
   color: var(--muted);
-  margin-top: 4px;
+  margin-top: 5px;
 }
 
-.badge {
-  padding: 5px 9px;
-  border-radius: 8px;
-  background: #173e34;
-  color: var(--green);
-  font-size: 10px;
-  font-weight: 800;
+.table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
   font-size: 12px;
+  white-space: nowrap;
 }
 
 th {
+  text-align: left;
   color: var(--muted);
   font-weight: 500;
-  text-align: left;
-  padding: 12px 6px;
+  padding: 12px 9px;
 }
 
 td {
-  padding: 13px 6px;
+  padding: 14px 9px;
   border-top: 1px solid var(--border);
 }
 
 .empty {
-  color: var(--muted);
-  font-size: 13px;
-  padding: 20px 0;
   text-align: center;
+  color: var(--muted);
+  padding: 24px 10px;
+  white-space: normal;
+}
+
+.chart-container {
+  position: relative;
+  height: 260px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+}
+
+.info-row:last-child {
+  border-bottom: none;
+}
+
+.info-row span:first-child {
+  color: var(--muted);
+}
+
+.info-row strong {
+  text-align: right;
+}
+
+.updated {
+  color: var(--muted);
+  font-size: 11px;
+  margin-top: 13px;
+}
+
+.refresh-button {
+  background: #193957;
+  color: var(--text);
+  border: 1px solid #345b83;
+  border-radius: 10px;
+  padding: 9px 14px;
+  font-size: 12px;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.refresh-button:active {
+  opacity: 0.7;
+}
+
+.warning-box {
+  background: #332719;
+  border: 1px solid #68512c;
+  border-radius: 13px;
+  padding: 14px;
+  font-size: 12px;
+  color: #e8c98d;
+  line-height: 1.6;
+  margin-top: 16px;
+}
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: rgba(14, 22, 39, 0.97);
+  border-top: 1px solid var(--border);
+  padding: 11px 5px calc(11px + env(safe-area-inset-bottom));
+  z-index: 100;
+  backdrop-filter: blur(14px);
+}
+
+.bottom-nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 10px;
+  text-align: center;
+  min-width: 55px;
+}
+
+.bottom-nav a span {
+  display: block;
+  font-size: 20px;
+  margin-bottom: 4px;
 }
 
 footer {
   text-align: center;
   color: var(--muted);
   font-size: 11px;
-  padding: 30px 15px;
+  line-height: 1.8;
+  padding: 28px 15px;
 }
 
 @media (min-width: 700px) {
   .grid {
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  .hero-value {
+    font-size: 46px;
   }
 }
 </style>
@@ -174,207 +361,788 @@ footer {
 <body>
 
 <header>
-  <div class="brand">APEX <span>MEME PRO</span></div>
-  <div class="subtitle">V4 • Solana Trading Intelligence</div>
-  <div class="status">● PAPER TRADING</div>
+  <div class="header-inner">
+
+    <div class="brand">
+      APEX <span>MEME PRO</span>
+    </div>
+
+    <div class="subtitle">
+      V4 • Solana Trading Intelligence Terminal
+    </div>
+
+    <div class="status-row">
+      <span class="badge">● PAPER TRADING</span>
+      <span class="badge blue" id="connectionStatus">
+        CONNECTING
+      </span>
+      <span class="badge blue">REAL MONEY LOCKED</span>
+    </div>
+
+    <div class="updated" id="lastUpdated">
+      Waiting for portfolio data...
+    </div>
+
+  </div>
 </header>
 
 <main>
 
-  <div class="grid">
-    <div class="card">
-      <div class="label">Portfolio Value</div>
-      <div class="value" id="equity">$1,000.00</div>
+<section id="overview">
+
+  <div class="hero">
+    <div class="hero-label">
+      TOTAL PAPER PORTFOLIO VALUE
     </div>
+
+    <div class="hero-value" id="equity">
+      —
+    </div>
+
+    <div class="hero-sub">
+      Simulated USD balance • No real funds connected
+    </div>
+  </div>
+
+  <div class="grid">
 
     <div class="card">
       <div class="label">Total P&L</div>
-      <div class="value" id="pnl">$0.00</div>
+      <div class="value" id="pnl">—</div>
+    </div>
+
+    <div class="card">
+      <div class="label">Return</div>
+      <div class="value" id="returnPct">—</div>
     </div>
 
     <div class="card">
       <div class="label">Available Cash</div>
-      <div class="value" id="cash">$1,000.00</div>
+      <div class="value" id="cash">—</div>
     </div>
 
     <div class="card">
       <div class="label">Open Positions</div>
-      <div class="value" id="positions">0</div>
+      <div class="value" id="positionsCount">—</div>
+    </div>
+
+  </div>
+
+  <div class="section-title">
+    📈 Portfolio Performance
+    <button class="refresh-button" onclick="refreshDashboard()">
+      ↻ Refresh
+    </button>
+  </div>
+
+  <div class="card">
+    <div class="chart-container">
+      <canvas id="portfolioChart"></canvas>
+    </div>
+
+    <div class="updated">
+      Chart updates after successful trading-engine runs.
     </div>
   </div>
 
-  <div class="section-title">📈 Portfolio Performance</div>
+</section>
 
-  <div class="card">
-    <canvas id="portfolioChart"></canvas>
+<section id="workers">
+
+  <div class="section-title">
+    🤖 Digital Trading Workers
   </div>
 
-  <div class="section-title">🤖 Digital Trading Workers</div>
-
   <div class="card">
+
     <div class="worker">
       <div>
         <div class="worker-name">🔎 Hunter</div>
-        <div class="worker-description">Token discovery</div>
+        <div class="worker-description">
+          Discovers Solana token opportunities
+        </div>
       </div>
-      <span class="badge">CONFIGURED</span>
+      <span class="badge blue" id="hunterStatus">—</span>
     </div>
 
     <div class="worker">
       <div>
         <div class="worker-name">🧠 Analyst</div>
-        <div class="worker-description">Market scoring</div>
+        <div class="worker-description">
+          Scores liquidity, momentum and buy pressure
+        </div>
       </div>
-      <span class="badge">CONFIGURED</span>
+      <span class="badge blue" id="analystStatus">—</span>
     </div>
 
     <div class="worker">
       <div>
         <div class="worker-name">⚡ Trader</div>
-        <div class="worker-description">Simulated execution</div>
+        <div class="worker-description">
+          Executes simulated entries and exits
+        </div>
       </div>
-      <span class="badge">PAPER</span>
+      <span class="badge blue" id="traderStatus">—</span>
     </div>
 
     <div class="worker">
       <div>
         <div class="worker-name">🛡️ Supervisor</div>
-        <div class="worker-description">Risk management</div>
+        <div class="worker-description">
+          Applies portfolio risk restrictions
+        </div>
       </div>
-      <span class="badge">CONFIGURED</span>
+      <span class="badge blue" id="supervisorStatus">—</span>
+    </div>
+
+  </div>
+
+</section>
+
+<section id="trades">
+
+  <div class="section-title">
+    💼 Active Positions
+    <span class="section-note" id="positionsLabel"></span>
+  </div>
+
+  <div class="card">
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Token</th>
+            <th>Entry Price</th>
+            <th>Quantity</th>
+            <th>Cost</th>
+          </tr>
+        </thead>
+
+        <tbody id="positionsTable">
+          <tr>
+            <td colspan="4" class="empty">
+              Loading positions...
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 
-  <div class="section-title">💼 Active Positions</div>
-
-  <div class="card">
-    <table>
-      <thead>
-        <tr>
-          <th>Token</th>
-          <th>Entry</th>
-          <th>Quantity</th>
-          <th>Cost</th>
-        </tr>
-      </thead>
-      <tbody id="positionsTable">
-        <tr>
-          <td colspan="4" class="empty">No positions loaded</td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="section-title">
+    📜 Trading History
   </div>
 
-  <div class="section-title">📜 Trading History</div>
-
   <div class="card">
-    <table>
-      <thead>
-        <tr>
-          <th>Side</th>
-          <th>Token</th>
-          <th>Price</th>
-          <th>Total</th>
-        </tr>
-      </thead>
-      <tbody id="historyTable">
-        <tr>
-          <td colspan="4" class="empty">No trades loaded</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Side</th>
+            <th>Token</th>
+            <th>Price</th>
+            <th>Total</th>
+            <th>Profit</th>
+          </tr>
+        </thead>
+
+        <tbody id="historyTable">
+          <tr>
+            <td colspan="5" class="empty">
+              Loading trading history...
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
-  <div class="section-title">🔥 Trading Intelligence</div>
+</section>
+
+<section id="intelligence">
+
+  <div class="section-title">
+    🔥 Trading Intelligence
+  </div>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="label">Tokens Analysed</div>
+      <div class="value" id="candidates">—</div>
+    </div>
+
+    <div class="card">
+      <div class="label">Total Trade Events</div>
+      <div class="value" id="totalTrades">—</div>
+    </div>
+
+    <div class="card">
+      <div class="label">Open Positions</div>
+      <div class="value" id="statsPositions">—</div>
+    </div>
+
+    <div class="card">
+      <div class="label">Engine Errors</div>
+      <div class="value" id="errors">—</div>
+    </div>
+
+  </div>
+
+  <div class="section-title">
+    🛡️ System Information
+  </div>
 
   <div class="card">
-    <div class="worker">
-      <span>New-launch monitoring</span>
-      <span class="badge">READY</span>
+
+    <div class="info-row">
+      <span>Trading mode</span>
+      <strong>PAPER ONLY</strong>
     </div>
 
-    <div class="worker">
-      <span>Established-token monitoring</span>
-      <span class="badge">READY</span>
+    <div class="info-row">
+      <span>Real-money execution</span>
+      <strong class="negative">DISABLED</strong>
     </div>
 
-    <div class="worker">
+    <div class="info-row">
+      <span>Wallet connection</span>
+      <strong>NOT CONNECTED</strong>
+    </div>
+
+    <div class="info-row">
       <span>Copy trading</span>
-      <span class="badge">NOT CONNECTED</span>
+      <strong>NOT IMPLEMENTED</strong>
     </div>
 
-    <div class="worker">
-      <span>Real-money trading</span>
-      <span class="badge">LOCKED</span>
+    <div class="info-row">
+      <span>Dashboard refresh</span>
+      <strong>60 seconds</strong>
     </div>
+
+    <div class="info-row">
+      <span>Trading schedule</span>
+      <strong>Approximately 15 minutes</strong>
+    </div>
+
   </div>
+
+  <div class="warning-box">
+    ⚠️ APEX MEME PRO is currently a research and
+    paper-trading system. Trades use simulated fills,
+    not executable exchange quotes. Market data can
+    be delayed, and simulated performance does not
+    predict real trading returns.
+  </div>
+
+</section>
 
 </main>
 
 <footer>
   APEX MEME PRO V4<br>
-  Research & Paper Trading Only<br>
-  Simulated performance does not predict real returns.
+  Solana Trading Intelligence<br>
+  Research & Paper Trading Only
 </footer>
 
+<nav class="bottom-nav">
+  <a href="#overview">
+    <span>📊</span>
+    Overview
+  </a>
+
+  <a href="#workers">
+    <span>🤖</span>
+    Workers
+  </a>
+
+  <a href="#trades">
+    <span>💼</span>
+    Trades
+  </a>
+
+  <a href="#intelligence">
+    <span>🛡️</span>
+    System
+  </a>
+</nav>
+
 <script>
-const money = n => "$" + Number(n).toLocaleString(
-  "en-US",
-  {minimumFractionDigits: 2, maximumFractionDigits: 2}
-);
 
-const demo = {
-  equity: 1000,
-  cash: 1000,
-  positions: [],
-  history: []
-};
+const INITIAL_BALANCE = 1000;
 
-document.getElementById("equity").textContent = money(demo.equity);
-document.getElementById("cash").textContent = money(demo.cash);
-document.getElementById("positions").textContent = demo.positions.length;
+let portfolioChart = null;
 
-const pnl = demo.equity - 1000;
-const pnlElement = document.getElementById("pnl");
+function money(value) {
+  if (
+    value === null ||
+    value === undefined ||
+    !Number.isFinite(Number(value))
+  ) {
+    return "N/A";
+  }
 
-pnlElement.textContent = money(pnl);
-pnlElement.className = "value " + (
-  pnl >= 0 ? "positive" : "negative"
-);
+  return "$" + Number(value).toLocaleString(
+    "en-US",
+    {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    }
+  );
+}
 
-new Chart(
-  document.getElementById("portfolioChart"),
-  {
-    type: "line",
-    data: {
-      labels: ["Start"],
-      datasets: [{
-        label: "Portfolio USD",
-        data: [demo.equity],
-        borderColor: "#22e6a7",
-        backgroundColor: "rgba(34,230,167,0.08)",
-        fill: true,
-        tension: 0.35
-      }]
-    },
-    options: {
-      responsive: true,
-      plugins: {
-        legend: {display: false}
+function precise(value) {
+  if (!Number.isFinite(Number(value))) {
+    return "N/A";
+  }
+
+  return Number(value).toLocaleString(
+    "en-US",
+    {
+      maximumSignificantDigits: 8
+    }
+  );
+}
+
+function setText(id, value) {
+  const element = document.getElementById(id);
+
+  if (element) {
+    element.textContent = value;
+  }
+}
+
+function setSignedValue(id, value, percent = false) {
+  const element = document.getElementById(id);
+
+  if (!element) return;
+
+  if (!Number.isFinite(value)) {
+    element.textContent = "N/A";
+    element.className = "value";
+    return;
+  }
+
+  const sign = value >= 0 ? "+" : "-";
+
+  element.textContent = percent
+    ? sign + Math.abs(value).toFixed(2) + "%"
+    : sign + money(Math.abs(value));
+
+  element.className =
+    "value " + (value >= 0 ? "positive" : "negative");
+}
+
+function renderPositions(positions) {
+  const table = document.getElementById("positionsTable");
+
+  table.replaceChildren();
+
+  if (!positions.length) {
+    const row = document.createElement("tr");
+    const cell = document.createElement("td");
+
+    cell.colSpan = 4;
+    cell.className = "empty";
+    cell.textContent = "No open positions";
+
+    row.appendChild(cell);
+    table.appendChild(row);
+    return;
+  }
+
+  for (const position of positions) {
+    const row = document.createElement("tr");
+
+    const values = [
+      position.symbol || "?",
+      precise(position.entry_price),
+      precise(position.quantity),
+      money(position.cost)
+    ];
+
+    for (const value of values) {
+      const cell = document.createElement("td");
+      cell.textContent = value;
+      row.appendChild(cell);
+    }
+
+    table.appendChild(row);
+  }
+}
+
+function renderHistory(history) {
+  const table = document.getElementById("historyTable");
+
+  table.replaceChildren();
+
+  if (!history.length) {
+    const row = document.createElement("tr");
+    const cell = document.createElement("td");
+
+    cell.colSpan = 5;
+    cell.className = "empty";
+    cell.textContent = "No trading history available";
+
+    row.appendChild(cell);
+    table.appendChild(row);
+    return;
+  }
+
+  const sorted = [...history].reverse();
+
+  for (const trade of sorted) {
+    const row = document.createElement("tr");
+
+    const values = [
+      trade.side || "?",
+      trade.symbol || "?",
+      precise(trade.price),
+      money(trade.total),
+      trade.profit == null
+        ? "—"
+        : money(trade.profit)
+    ];
+
+    values.forEach((value, index) => {
+      const cell = document.createElement("td");
+
+      cell.textContent = value;
+
+      if (index === 0) {
+        cell.className =
+          trade.side === "BUY"
+            ? "positive"
+            : "negative";
+      }
+
+      if (index === 4 && trade.profit != null) {
+        cell.className =
+          trade.profit >= 0
+            ? "positive"
+            : "negative";
+      }
+
+      row.appendChild(cell);
+    });
+
+    table.appendChild(row);
+  }
+}
+
+function renderWorkers(workers) {
+  const names = [
+    "hunter",
+    "analyst",
+    "trader",
+    "supervisor"
+  ];
+
+  for (const name of names) {
+    const element = document.getElementById(
+      name + "Status"
+    );
+
+    if (!element) continue;
+
+    const status = String(
+      workers[name] || "UNKNOWN"
+    );
+
+    element.textContent = status;
+
+    element.className =
+      "badge " +
+      (
+        status === "HALTED"
+          ? "red"
+          : status === "ACTIVE"
+            ? ""
+            : "blue"
+      );
+  }
+}
+
+function renderChart(history) {
+  if (typeof Chart === "undefined") {
+    console.warn("Chart.js unavailable");
+    return;
+  }
+
+  const valid = history.filter(item =>
+    item &&
+    item.equity !== null &&
+    item.equity !== undefined &&
+    Number.isFinite(Number(item.equity))
+  );
+
+  const labels = valid.map(item => {
+    const date = new Date(item.time);
+
+    return Number.isNaN(date.getTime())
+      ? "Unknown"
+      : date.toLocaleString("en-AU", {
+          day: "2-digit",
+          month: "2-digit",
+          hour: "2-digit",
+          minute: "2-digit"
+        });
+  });
+
+  const values = valid.map(
+    item => Number(item.equity)
+  );
+
+  if (portfolioChart) {
+    portfolioChart.destroy();
+  }
+
+  portfolioChart = new Chart(
+    document.getElementById("portfolioChart"),
+    {
+      type: "line",
+
+      data: {
+        labels,
+
+        datasets: [{
+          label: "Paper Portfolio (USD)",
+          data: values,
+          borderColor: "#20e6a4",
+          backgroundColor: "rgba(32,230,164,0.10)",
+          fill: true,
+          borderWidth: 2,
+          tension: 0.25,
+          pointRadius: values.length > 25 ? 0 : 3,
+          pointHoverRadius: 5
+        }]
       },
-      scales: {
-        x: {
-          ticks: {color: "#91a1bb"},
-          grid: {color: "#24314b"}
+
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+
+        interaction: {
+          intersect: false,
+          mode: "index"
         },
-        y: {
-          ticks: {color: "#91a1bb"},
-          grid: {color: "#24314b"}
+
+        plugins: {
+          legend: {
+            display: false
+          },
+
+          tooltip: {
+            callbacks: {
+              label: context =>
+                money(context.parsed.y)
+            }
+          }
+        },
+
+        scales: {
+          x: {
+            ticks: {
+              color: "#91a3bf",
+              maxTicksLimit: 5
+            },
+
+            grid: {
+              color: "#253550"
+            }
+          },
+
+          y: {
+            ticks: {
+              color: "#91a3bf",
+              callback: value => "$" + value
+            },
+
+            grid: {
+              color: "#253550"
+            }
+          }
         }
       }
     }
+  );
+}
+
+function updateConnection(status, message) {
+  const element = document.getElementById(
+    "connectionStatus"
+  );
+
+  element.textContent = message;
+
+  element.className =
+    status === "connected"
+      ? "badge"
+      : status === "stale"
+        ? "badge yellow"
+        : "badge red";
+}
+
+async function refreshDashboard() {
+  try {
+    const response = await fetch(
+      "./data.json?t=" + Date.now(),
+      {
+        cache: "no-store"
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error(
+        "Data request failed: " + response.status
+      );
+    }
+
+    const data = await response.json();
+
+    if (data.mode !== "PAPER") {
+      throw new Error(
+        "Unexpected trading mode"
+      );
+    }
+
+    const equity =
+      data.equity == null
+        ? null
+        : Number(data.equity);
+
+    const cash =
+      data.cash == null
+        ? null
+        : Number(data.cash);
+
+    const positions = Array.isArray(data.positions)
+      ? data.positions
+      : [];
+
+    const history = Array.isArray(data.history)
+      ? data.history
+      : [];
+
+    const snapshots = Array.isArray(
+      data.portfolio_history
+    )
+      ? data.portfolio_history
+      : [];
+
+    setText("equity", money(equity));
+    setText("cash", money(cash));
+
+    setText(
+      "positionsCount",
+      positions.length
+    );
+
+    setText(
+      "positionsLabel",
+      positions.length + " open"
+    );
+
+    if (equity !== null && Number.isFinite(equity)) {
+      const pnl = equity - INITIAL_BALANCE;
+
+      const returnPct =
+        pnl / INITIAL_BALANCE * 100;
+
+      setSignedValue("pnl", pnl);
+      setSignedValue(
+        "returnPct",
+        returnPct,
+        true
+      );
+    } else {
+      setText("pnl", "N/A");
+      setText("returnPct", "N/A");
+    }
+
+    renderPositions(positions);
+    renderHistory(history);
+
+    renderWorkers(
+      data.workers || {}
+    );
+
+    renderChart(snapshots);
+
+    const stats = data.statistics || {};
+
+    setText(
+      "candidates",
+      stats.candidates ?? "—"
+    );
+
+    setText(
+      "totalTrades",
+      stats.total_trades ?? "—"
+    );
+
+    setText(
+      "statsPositions",
+      stats.open_positions ?? positions.length
+    );
+
+    setText(
+      "errors",
+      stats.errors ?? "—"
+    );
+
+    const updated = new Date(
+      data.updated_at
+    );
+
+    if (!Number.isNaN(updated.getTime())) {
+      setText(
+        "lastUpdated",
+        "Last engine update: " +
+        updated.toLocaleString("en-AU")
+      );
+
+      const ageMinutes =
+        (Date.now() - updated.getTime()) / 60000;
+
+      if (ageMinutes > 45) {
+        updateConnection(
+          "stale",
+          "● DATA DELAYED"
+        );
+      } else {
+        updateConnection(
+          "connected",
+          "● DATA CONNECTED"
+        );
+      }
+    } else {
+      updateConnection(
+        "stale",
+        "● UPDATE TIME UNKNOWN"
+      );
+    }
+
+  } catch (error) {
+    console.error(
+      "APEX dashboard error:",
+      error
+    );
+
+    updateConnection(
+      "error",
+      "● DATA UNAVAILABLE"
+    );
   }
+}
+
+refreshDashboard();
+
+setInterval(
+  refreshDashboard,
+  60000
 );
+
 </script>
 
 </body>
