@@ -1,17 +1,10 @@
 {
   "version": "V4",
   "mode": "PAPER",
-  "updated_at": "2026-10-12T19:48:39.914010+00:00",
-  "equity": 137082.4705,
-  "cash": 137046.8479,
-  "positions": [
-    {
-      "symbol": "GOIF",
-      "entry_price": 0.009268769999999999,
-      "quantity": 3220.855599006077,
-      "cost": 30.003386683818643
-    }
-  ],
+  "updated_at": "2026-10-12T20:19:12.205960+00:00",
+  "equity": 137082.5091,
+  "cash": 137082.5091,
+  "positions": [],
   "history": [
     {
       "time": "2026-10-11T22:17:28.748000+00:00",
@@ -36,6 +29,14 @@
       "price": 25.720200000000002,
       "total": 136106.8512553073,
       "profit": 136076.8513
+    },
+    {
+      "time": "2026-10-12T20:19:12.205601+00:00",
+      "side": "SELL",
+      "symbol": "GOIF",
+      "price": 0.0111276,
+      "total": 35.66119079968252,
+      "profit": 5.6578
     }
   ],
   "portfolio_history": [
@@ -206,6 +207,10 @@
     {
       "time": "2026-10-12T19:48:39.969754+00:00",
       "equity": 137082.4705
+    },
+    {
+      "time": "2026-10-12T20:19:12.260984+00:00",
+      "equity": 137082.5091
     }
   ],
   "workers": {
@@ -215,9 +220,9 @@
     "supervisor": "ACTIVE"
   },
   "statistics": {
-    "candidates": 50,
-    "total_trades": 3,
-    "open_positions": 1,
+    "candidates": 52,
+    "total_trades": 4,
+    "open_positions": 0,
     "errors": 0
   },
   "real_money_enabled": false,
