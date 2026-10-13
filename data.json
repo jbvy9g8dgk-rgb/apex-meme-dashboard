@@ -1,10 +1,17 @@
 {
   "version": "V4",
   "mode": "PAPER",
-  "updated_at": "2026-10-13T00:30:27.380386+00:00",
-  "equity": 137082.5091,
-  "cash": 137082.5091,
-  "positions": [],
+  "updated_at": "2026-10-13T01:08:51.529981+00:00",
+  "equity": 137021.4327,
+  "cash": 132970.0338,
+  "positions": [
+    {
+      "symbol": "HUMPH",
+      "entry_price": 0.00334916,
+      "quantity": 1221772.8909409468,
+      "cost": 4112.475271782694
+    }
+  ],
   "history": [
     {
       "time": "2026-10-11T22:17:28.748000+00:00",
@@ -37,6 +44,14 @@
       "price": 0.0111276,
       "total": 35.66119079968252,
       "profit": 5.6578
+    },
+    {
+      "time": "2026-10-13T01:08:51.529599+00:00",
+      "side": "BUY",
+      "symbol": "HUMPH",
+      "price": 0.00334916,
+      "total": 4112.475271782694,
+      "profit": null
     }
   ],
   "portfolio_history": [
@@ -243,6 +258,10 @@
     {
       "time": "2026-10-13T00:30:27.829760+00:00",
       "equity": 137082.5091
+    },
+    {
+      "time": "2026-10-13T01:08:51.585754+00:00",
+      "equity": 137021.4327
     }
   ],
   "workers": {
@@ -252,9 +271,9 @@
     "supervisor": "ACTIVE"
   },
   "statistics": {
-    "candidates": 52,
-    "total_trades": 4,
-    "open_positions": 0,
+    "candidates": 49,
+    "total_trades": 5,
+    "open_positions": 1,
     "errors": 0
   },
   "real_money_enabled": false,
