@@ -1,15 +1,21 @@
 {
   "version": "V4",
   "mode": "PAPER",
-  "updated_at": "2026-10-15T18:57:15.083420+00:00",
-  "equity": 19019131.3145,
-  "cash": 18431063.8514,
+  "updated_at": "2026-10-15T19:31:40.217814+00:00",
+  "equity": 19010914.1838,
+  "cash": 17860482.2063,
   "positions": [
     {
       "symbol": "PUMP",
       "entry_price": 0.00441673,
       "quantity": 128427050.25453563,
       "cost": 570077.9956489599
+    },
+    {
+      "symbol": "NODF",
+      "entry_price": 0.48591100000000004,
+      "quantity": 1168380.0877780628,
+      "cost": 570581.6450576143
     }
   ],
   "history": [
@@ -100,6 +106,14 @@
       "price": 0.00058014,
       "total": 3076.536526303331,
       "profit": -1038.9188
+    },
+    {
+      "time": "2026-10-15T19:31:40.217182+00:00",
+      "side": "BUY",
+      "symbol": "NODF",
+      "price": 0.48591100000000004,
+      "total": 570581.6450576143,
+      "profit": null
     }
   ],
   "portfolio_history": [
@@ -726,6 +740,10 @@
     {
       "time": "2026-10-15T18:57:15.127664+00:00",
       "equity": 19019131.3145
+    },
+    {
+      "time": "2026-10-15T19:31:40.276537+00:00",
+      "equity": 19010914.1838
     }
   ],
   "workers": {
@@ -735,9 +753,9 @@
     "supervisor": "ACTIVE"
   },
   "statistics": {
-    "candidates": 54,
-    "total_trades": 11,
-    "open_positions": 1,
+    "candidates": 51,
+    "total_trades": 12,
+    "open_positions": 2,
     "errors": 0
   },
   "real_money_enabled": false,
