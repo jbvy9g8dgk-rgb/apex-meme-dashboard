@@ -1,15 +1,21 @@
 {
   "version": "V4",
   "mode": "PAPER",
-  "updated_at": "2026-10-17T18:58:28.579570+00:00",
-  "equity": 2912208387.033,
-  "cash": 2824424198.089,
+  "updated_at": "2026-10-17T19:26:05.729636+00:00",
+  "equity": 2910655681.4194,
+  "cash": 2737065605.5012,
   "positions": [
     {
       "symbol": "PUMP",
       "entry_price": 0.00442582,
       "quantity": 19638521016.562458,
       "cost": 87353325.71409291
+    },
+    {
+      "symbol": "XTO",
+      "entry_price": 0.5890320000000001,
+      "quantity": 147567194.3542213,
+      "cost": 87358592.58779469
     }
   ],
   "history": [
@@ -131,6 +137,14 @@
       "symbol": "PUMP",
       "price": 0.00442582,
       "total": 87353325.71409291,
+      "profit": null
+    },
+    {
+      "time": "2026-10-17T19:26:05.728935+00:00",
+      "side": "BUY",
+      "symbol": "XTO",
+      "price": 0.5890320000000001,
+      "total": 87358592.58779469,
       "profit": null
     }
   ],
@@ -1066,6 +1080,10 @@
     {
       "time": "2026-10-17T18:58:28.635656+00:00",
       "equity": 2912208387.033
+    },
+    {
+      "time": "2026-10-17T19:26:05.780802+00:00",
+      "equity": 2910655681.4194
     }
   ],
   "workers": {
@@ -1075,9 +1093,9 @@
     "supervisor": "ACTIVE"
   },
   "statistics": {
-    "candidates": 46,
-    "total_trades": 15,
-    "open_positions": 1,
+    "candidates": 45,
+    "total_trades": 16,
+    "open_positions": 2,
     "errors": 0
   },
   "real_money_enabled": false,
