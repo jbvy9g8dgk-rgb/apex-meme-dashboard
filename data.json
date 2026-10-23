@@ -1,9 +1,9 @@
 {
   "version": "V4",
   "mode": "PAPER",
-  "updated_at": "2026-10-23T20:32:23.000187+00:00",
-  "equity": 2959097601.6705,
-  "cash": 2673726564.0554,
+  "updated_at": "2026-10-23T21:14:25.312979+00:00",
+  "equity": 2963497826.4428,
+  "cash": 2777326104.3152,
   "positions": [
     {
       "symbol": "PUMP",
@@ -16,12 +16,6 @@
       "entry_price": 0.39329400000000003,
       "quantity": 222656601.33974043,
       "cost": 88009553.13297677
-    },
-    {
-      "symbol": "DOAS",
-      "entry_price": 0.0512777,
-      "quantity": 1707889892.176994,
-      "cost": 88016749.27043644
     }
   ],
   "history": [
@@ -240,6 +234,14 @@
       "price": 0.0512777,
       "total": 88016749.27043644,
       "profit": null
+    },
+    {
+      "time": "2026-10-23T21:14:25.312049+00:00",
+      "side": "SELL",
+      "symbol": "DOAS",
+      "price": 0.0609642,
+      "total": 103599540.25983343,
+      "profit": 15582790.9894
     }
   ],
   "portfolio_history": [
@@ -2034,6 +2036,10 @@
     {
       "time": "2026-10-23T20:32:23.056106+00:00",
       "equity": 2959097601.6705
+    },
+    {
+      "time": "2026-10-23T21:14:25.361546+00:00",
+      "equity": 2963497826.4428
     }
   ],
   "workers": {
@@ -2043,9 +2049,9 @@
     "supervisor": "ACTIVE"
   },
   "statistics": {
-    "candidates": 47,
-    "total_trades": 27,
-    "open_positions": 3,
+    "candidates": 49,
+    "total_trades": 28,
+    "open_positions": 2,
     "errors": 0
   },
   "real_money_enabled": false,
