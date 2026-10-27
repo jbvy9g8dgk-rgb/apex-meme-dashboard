@@ -1,15 +1,21 @@
 {
   "version": "V4",
   "mode": "PAPER",
-  "updated_at": "2026-10-27T01:55:16.245700+00:00",
-  "equity": 2929711420.6047,
-  "cash": 2843011510.5005,
+  "updated_at": "2026-10-27T02:29:35.345254+00:00",
+  "equity": 2927607476.5142,
+  "cash": 2755144137.3755,
   "positions": [
     {
       "symbol": "PUMP",
       "entry_price": 0.00431169,
       "quantity": 20486746243.905727,
       "cost": 88776380.81646822
+    },
+    {
+      "symbol": "XCAT",
+      "entry_price": 3.6663,
+      "quantity": 23846394.52838304,
+      "cost": 87867373.12503591
     }
   ],
   "history": [
@@ -276,6 +282,14 @@
       "price": 0.00015830100000000001,
       "total": 61292357.14173185,
       "profit": -27424802.5653
+    },
+    {
+      "time": "2026-10-27T02:29:35.344321+00:00",
+      "side": "BUY",
+      "symbol": "XCAT",
+      "price": 3.6663,
+      "total": 87867373.12503591,
+      "profit": null
     }
   ],
   "portfolio_history": [
@@ -2526,6 +2540,10 @@
     {
       "time": "2026-10-27T01:55:16.292945+00:00",
       "equity": 2929711420.6047
+    },
+    {
+      "time": "2026-10-27T02:29:35.401681+00:00",
+      "equity": 2927607476.5142
     }
   ],
   "workers": {
@@ -2536,8 +2554,8 @@
   },
   "statistics": {
     "candidates": 54,
-    "total_trades": 33,
-    "open_positions": 1,
+    "total_trades": 34,
+    "open_positions": 2,
     "errors": 0
   },
   "real_money_enabled": false,
