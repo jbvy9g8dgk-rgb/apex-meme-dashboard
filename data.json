@@ -1,15 +1,21 @@
 {
   "version": "V4",
   "mode": "PAPER",
-  "updated_at": "2026-10-29T05:45:24.684680+00:00",
-  "equity": 448437028940.8546,
-  "cash": 435975897090.7912,
+  "updated_at": "2026-10-29T06:48:07.265491+00:00",
+  "equity": 448068242280.5198,
+  "cash": 422527858121.8449,
   "positions": [
     {
       "symbol": "PUMP",
       "entry_price": 0.004595500000000001,
       "quantity": 2914884643289.68,
       "cost": 13462665706.771585
+    },
+    {
+      "symbol": "AISI",
+      "entry_price": 6.374109999999999e-05,
+      "quantity": 209924189794364.72,
+      "cost": 13448038968.946312
     }
   ],
   "history": [
@@ -340,6 +346,14 @@
       "price": 0.000173448,
       "total": 14131574199.732662,
       "profit": 683039238.51
+    },
+    {
+      "time": "2026-10-29T06:48:07.264511+00:00",
+      "side": "BUY",
+      "symbol": "AISI",
+      "price": 6.374109999999999e-05,
+      "total": 13448038968.946312,
+      "profit": null
     }
   ],
   "portfolio_history": [
@@ -2830,6 +2844,10 @@
     {
       "time": "2026-10-29T05:45:24.717670+00:00",
       "equity": 448437028940.8546
+    },
+    {
+      "time": "2026-10-29T06:48:07.317053+00:00",
+      "equity": 448068242280.5198
     }
   ],
   "workers": {
@@ -2839,9 +2857,9 @@
     "supervisor": "ACTIVE"
   },
   "statistics": {
-    "candidates": 50,
-    "total_trades": 41,
-    "open_positions": 1,
+    "candidates": 51,
+    "total_trades": 42,
+    "open_positions": 2,
     "errors": 0
   },
   "real_money_enabled": false,
