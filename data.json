@@ -1,17 +1,10 @@
 {
   "version": "V4",
   "mode": "PAPER",
-  "updated_at": "2026-10-29T23:36:24.633941+00:00",
-  "equity": 450867838024.5775,
-  "cash": 435107230153.8892,
-  "positions": [
-    {
-      "symbol": "USDF",
-      "entry_price": 0.0488234,
-      "quantity": 276453391873.15045,
-      "cost": 13565220635.959372
-    }
-  ],
+  "updated_at": "2026-10-30T00:17:18.302813+00:00",
+  "equity": 435313186082.7437,
+  "cash": 435313186082.7437,
+  "positions": [],
   "history": [
     {
       "time": "2026-10-11T22:17:28.748000+00:00",
@@ -388,6 +381,14 @@
       "price": 0.004053060000000001,
       "total": 11755131340.570015,
       "profit": -1707534366.2016
+    },
+    {
+      "time": "2026-10-30T00:17:18.301812+00:00",
+      "side": "SELL",
+      "symbol": "USDF",
+      "price": 0.000748737,
+      "total": 205955928.85457242,
+      "profit": -13359264707.1048
     }
   ],
   "portfolio_history": [
@@ -2954,6 +2955,10 @@
     {
       "time": "2026-10-29T23:36:24.675815+00:00",
       "equity": 450867838024.5775
+    },
+    {
+      "time": "2026-10-30T00:17:18.354806+00:00",
+      "equity": 435313186082.7437
     }
   ],
   "workers": {
@@ -2963,9 +2968,9 @@
     "supervisor": "ACTIVE"
   },
   "statistics": {
-    "candidates": 49,
-    "total_trades": 47,
-    "open_positions": 1,
+    "candidates": 48,
+    "total_trades": 48,
+    "open_positions": 0,
     "errors": 0
   },
   "real_money_enabled": false,
