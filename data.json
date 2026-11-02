@@ -1,15 +1,21 @@
 {
   "version": "V4",
   "mode": "PAPER",
-  "updated_at": "2026-11-02T21:40:13.051777+00:00",
-  "equity": 65768019806004.83,
-  "cash": 63876708180091.45,
+  "updated_at": "2026-11-02T22:24:54.892707+00:00",
+  "equity": 65732052260577.836,
+  "cash": 61903867623907.5,
   "positions": [
     {
       "symbol": "PUMP",
       "entry_price": 0.00414403,
       "quantity": 476280943317395.6,
       "cost": 1983640721141.2935
+    },
+    {
+      "symbol": "iNu",
+      "entry_price": 0.000174629,
+      "quantity": 1.1240838310950826e+16,
+      "cost": 1972840556183.9517
     }
   ],
   "history": [
@@ -436,6 +442,14 @@
       "price": 0.000228591,
       "total": 1723677388496.7275,
       "profit": -261008470143.7009
+    },
+    {
+      "time": "2026-11-02T22:24:54.891641+00:00",
+      "side": "BUY",
+      "symbol": "iNu",
+      "price": 0.000174629,
+      "total": 1972840556183.9517,
+      "profit": null
     }
   ],
   "portfolio_history": [
@@ -3430,6 +3444,10 @@
     {
       "time": "2026-11-02T21:40:13.097419+00:00",
       "equity": 65768019806004.83
+    },
+    {
+      "time": "2026-11-02T22:24:54.938988+00:00",
+      "equity": 65732052260577.836
     }
   ],
   "workers": {
@@ -3439,9 +3457,9 @@
     "supervisor": "ACTIVE"
   },
   "statistics": {
-    "candidates": 55,
-    "total_trades": 53,
-    "open_positions": 1,
+    "candidates": 53,
+    "total_trades": 54,
+    "open_positions": 2,
     "errors": 0
   },
   "real_money_enabled": false,
