@@ -1,8 +1,8 @@
 {
   "version": "V4",
   "mode": "PAPER",
-  "updated_at": "2026-11-03T20:24:20.640248+00:00",
-  "equity": 64582119076795.07,
+  "updated_at": "2026-11-03T21:17:52.441222+00:00",
+  "equity": 64632604856786.71,
   "cash": 62561259034299.36,
   "positions": [
     {
@@ -3538,6 +3538,10 @@
     {
       "time": "2026-11-03T20:24:20.675575+00:00",
       "equity": 64582119076795.07
+    },
+    {
+      "time": "2026-11-03T21:17:52.483355+00:00",
+      "equity": 64632604856786.71
     }
   ],
   "workers": {
@@ -3547,7 +3551,7 @@
     "supervisor": "ACTIVE"
   },
   "statistics": {
-    "candidates": 54,
+    "candidates": 59,
     "total_trades": 55,
     "open_positions": 1,
     "errors": 0
