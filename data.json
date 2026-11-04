@@ -1,17 +1,10 @@
 {
   "version": "V4",
   "mode": "PAPER",
-  "updated_at": "2026-11-04T03:21:52.238664+00:00",
-  "equity": 64519726273220.49,
-  "cash": 62561259034299.36,
-  "positions": [
-    {
-      "symbol": "PUMP",
-      "entry_price": 0.00414403,
-      "quantity": 476280943317395.6,
-      "cost": 1983640721141.2935
-    }
-  ],
+  "updated_at": "2026-11-04T04:27:58.461108+00:00",
+  "equity": 9774184503580672.0,
+  "cash": 9774184503580672.0,
+  "positions": [],
   "history": [
     {
       "time": "2026-10-11T22:17:28.748000+00:00",
@@ -452,6 +445,14 @@
       "price": 5.87763e-05,
       "total": 657391410391.8594,
       "profit": -1315449145792.0923
+    },
+    {
+      "time": "2026-11-04T04:27:58.459989+00:00",
+      "side": "SELL",
+      "symbol": "PUMP",
+      "price": 20.493,
+      "total": 9711623244546372.0,
+      "profit": 9709639603825230.0
     }
   ],
   "portfolio_history": [
@@ -3566,6 +3567,10 @@
     {
       "time": "2026-11-04T03:21:52.289643+00:00",
       "equity": 64519726273220.49
+    },
+    {
+      "time": "2026-11-04T04:27:58.511781+00:00",
+      "equity": 9774184503580672.0
     }
   ],
   "workers": {
@@ -3575,9 +3580,9 @@
     "supervisor": "ACTIVE"
   },
   "statistics": {
-    "candidates": 53,
-    "total_trades": 55,
-    "open_positions": 1,
+    "candidates": 55,
+    "total_trades": 56,
+    "open_positions": 0,
     "errors": 0
   },
   "real_money_enabled": false,
