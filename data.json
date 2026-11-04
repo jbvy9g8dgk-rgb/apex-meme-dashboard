@@ -1,10 +1,17 @@
 {
   "version": "V4",
   "mode": "PAPER",
-  "updated_at": "2026-11-04T08:02:20.524730+00:00",
-  "equity": 9774184503580672.0,
-  "cash": 9774184503580672.0,
-  "positions": [],
+  "updated_at": "2026-11-04T09:11:47.845142+00:00",
+  "equity": 9769829668900858.0,
+  "cash": 9480958968473252.0,
+  "positions": [
+    {
+      "symbol": "SLINGTOSHI",
+      "entry_price": 0.00053631,
+      "quantity": 5.4401261850773434e+17,
+      "cost": 293225535107420.1
+    }
+  ],
   "history": [
     {
       "time": "2026-10-11T22:17:28.748000+00:00",
@@ -453,6 +460,14 @@
       "price": 20.493,
       "total": 9711623244546372.0,
       "profit": 9709639603825230.0
+    },
+    {
+      "time": "2026-11-04T09:11:47.844087+00:00",
+      "side": "BUY",
+      "symbol": "SLINGTOSHI",
+      "price": 0.00053631,
+      "total": 293225535107420.1,
+      "profit": null
     }
   ],
   "portfolio_history": [
@@ -3583,6 +3598,10 @@
     {
       "time": "2026-11-04T08:02:20.577735+00:00",
       "equity": 9774184503580672.0
+    },
+    {
+      "time": "2026-11-04T09:11:47.894148+00:00",
+      "equity": 9769829668900858.0
     }
   ],
   "workers": {
@@ -3592,9 +3611,9 @@
     "supervisor": "ACTIVE"
   },
   "statistics": {
-    "candidates": 53,
-    "total_trades": 56,
-    "open_positions": 0,
+    "candidates": 54,
+    "total_trades": 57,
+    "open_positions": 1,
     "errors": 0
   },
   "real_money_enabled": false,
